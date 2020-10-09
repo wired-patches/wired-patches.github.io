@@ -1,11 +1,24 @@
 
 // file controls
 
-window.onscroll = function() {apply_sticky()};
+// window.onscroll = function() {apply_sticky()};
+// var navbar = document.getElementById("navbar");
+// var sticky = navbar.offsetTop;
+
+// function apply_sticky() {
+//   if (window.pageYOffset > sticky) {
+//     navbar.classList.add("sticky");
+//   }
+//   else {
+//     navbar.classList.remove("sticky");
+//   };
+// };
+
+window.onscroll = function() {apply_nav()};
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
 
-function apply_sticky() {
+function apply_nav() {
   if (window.pageYOffset > sticky) {
     navbar.classList.add("sticky");
   }
@@ -13,6 +26,7 @@ function apply_sticky() {
     navbar.classList.remove("sticky");
   };
 };
+
 
 // mini e animated diagram
 

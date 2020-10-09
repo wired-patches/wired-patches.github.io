@@ -9,11 +9,12 @@ html {
     font-family: 'Arvo';
 }
 article {
-    margin-top: 10%;
+    margin-top: 5%;
     margin-bottom: 10%;
 }
+
 #intro {
-    border: 2px solid pink;
+    /* border: 2px solid pink; */
     justify-content: center;
     justify-items: center;
     align-content: center;
@@ -24,10 +25,10 @@ article {
     padding: 0;
 }
 #svgblock_mini .container {
-    border-color: cyan;
-    border-width: 5px;
-    border-style: solid;
-    z-index: -1;
+    /* border-color: cyan; */
+    /* border-width: 5px; */
+    /* border-style: solid; */
+    /* z-index: -1; */
 }
 .container {
     /* grid-area: diagram; */
@@ -40,9 +41,9 @@ article {
     margin: auto;
     text-align: center;
     position: relative;
-    border-color: purple;
-    border-width: 5px;
-    border-style: solid;
+    /* border-color: purple; */
+    /* border-width: 5px; */
+    /* border-style: solid; */
     
 }
 .pathcolor {
@@ -55,7 +56,7 @@ article {
 }
 #svgblock_mini {
     position: relative;
-    border: 2px solid goldenrod;
+    /* border: 2px solid goldenrod; */
     /* display: flex; */
     width: 400px;
     height: 400px;
@@ -114,6 +115,8 @@ canvas {
     position: relative;
 }
 nav {
+    display: none;
+    opacity: 0;
     left: 0;
     /* position: fixed; */
     background-color: rgba(0,0,0, 0.3);
@@ -132,11 +135,11 @@ nav {
 }
 .sticky {
     position: fixed;
-    top: 20;
+    top: 50;
 }
 .sticky + .body {
     width: 100%;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 .nav-link {
     /* border: 2px solid palevioletred; */
@@ -145,6 +148,7 @@ nav {
     font-size: 20px;
     font-weight: bold;
     margin-top: 5vh;
+    display: none;
     margin-bottom: 5vh;
     margin-left: 5%;
     margin-right: 5%;
@@ -159,7 +163,7 @@ nav {
     /* background-color: #181c25; */
 }
 #pam3-signal {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     height: 100px;
     width: 100px;
     /* background-color: #181c25; */
@@ -177,7 +181,7 @@ footer {
     margin: 20%;
 }
 .contact {
-    border: 2px solid rgb(5, 114, 69);
+    /* border: 2px solid rgb(5, 114, 69); */
     width: 500px;
     margin-left: 10%;
     /* display: flex; */
@@ -190,7 +194,7 @@ footer {
     vertical-align: middle;
     align-items: center;
     align-self: center;
-    border: 2px solid rgb(114, 45, 5);
+    /* border: 2px solid rgb(114, 45, 5); */
     width: 50px;
     height: 50px;
     float: right;
@@ -225,7 +229,7 @@ footer {
 }
 
 #license {
-    border: 2px solid rgb(114, 45, 5);
+    /* border: 2px solid rgb(114, 45, 5); */
     position: relative;
     text-justify: center;
 }
@@ -247,7 +251,7 @@ footer {
     }
     #welcome-panel{
         /* margin-left: 5vw; */
-        border: 2px solid plum;
+        /* border: 2px solid plum; */
     }
 }
 @media only screen and (max-width: 1000px){
@@ -265,7 +269,7 @@ footer {
     }
     #intro h3 {
         padding-left: 0;
-        border: 2px solid peru;
+        /* border: 2px solid peru; */
         margin-left: 5%;
         margin-bottom: 10px;
         transition: all 1s;
