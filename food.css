@@ -186,6 +186,7 @@ form {
     transition: all 4s ease;
     width: 100%;
     text-align: center;
+    border: 1px solid green;
 }
 .form-control {
     width: 600px;
@@ -197,20 +198,29 @@ form {
     color: #fff;
     font-size: 18px;
 }
-
+#check {
+    text-align: center;
+    margin: auto;
+    vertical-align: middle;
+}
 .g-recaptcha {
+    vertical-align: middle;
     display: inline-block;
-
+    margin-right: 20px;
 }
 
 #submit-btn {
-    border: 1px solid rgb(87, 112, 119);
     background-color: rgb(87, 112, 119);
+    vertical-align: middle;
     color: white;
     font-weight: bolder;
-    width: 200px;
+    width: 100px;
+    height:80px;
+    border-radius: 5%;
     display: inline-block;
-    font-size: 30px;
+    font-size: 20px;
+    margin-left: 20px;
+    transition: 1s;
 }
 #submit-btn:hover {
     background-color: rgb(128, 192, 209);
