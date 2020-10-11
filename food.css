@@ -186,7 +186,6 @@ form {
     transition: all 4s ease;
     width: 100%;
     text-align: center;
-    border: 1px solid green;
 }
 .form-control {
     width: 600px;
@@ -197,6 +196,7 @@ form {
     border-bottom: 1px solid gray;
     color: #fff;
     font-size: 18px;
+    margin-bottom: 8px;
 }
 #check {
     text-align: center;
@@ -217,13 +217,14 @@ form {
     width: 100px;
     height:80px;
     border-radius: 5%;
+    border:1px solid rgb(111, 160, 173);
     display: inline-block;
     font-size: 20px;
     margin-left: 20px;
     transition: 1s;
 }
 #submit-btn:hover {
-    background-color: rgb(128, 192, 209);
+    background-color: rgb(111, 160, 173);
 }
 textarea {
     resize: none;
