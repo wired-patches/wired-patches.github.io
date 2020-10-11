@@ -332,6 +332,7 @@ footer {
     }
     #welcome-panel{
         padding-left: 0;
+        margin-right: 50px;
     }
 }
 @media only screen and (max-width: 1000px){
