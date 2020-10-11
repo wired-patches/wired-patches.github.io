@@ -18,41 +18,41 @@ function apply_sticky() {
 
 var miniwirepath1_0 = anime.path('#miniringpath3');
 var minianimePath1_0 = anime.timeline({
-     loop: true,
-     easing: 'linear',
-     autoplay: false,
+  loop: true,
+  easing: 'linear',
+  autoplay: false,
 });
 const runningAnim = {
-     targets: ['#ele1_0', '#ele1_1'],
-     keyframes: [
-         { opacity: 1, duration: 0.001 },
-         {
-             translateX: miniwirepath1_0('x'),
-             translateY: miniwirepath1_0('y'),
-             rotate: miniwirepath1_0('angle'),
-             duration: 20000,
-             delay: anime.stagger(500),
-         },
-     ],
+  targets: ['#ele1_0', '#ele1_1'],
+  keyframes: [
+    { opacity: 1, duration: 0.001 },
+    {
+      translateX: miniwirepath1_0('x'),
+      translateY: miniwirepath1_0('y'),
+      rotate: miniwirepath1_0('angle'),
+      duration: 20000,
+      delay: anime.stagger(500),
+    },
+  ],
 };
 
 const fadingAnim ={
-    targets: ['#ele1_0', '#ele1_1'],
-    opacity: [
-          { value: 0.5, duration: 600 },
-          { value: 0.7, duration: 200 },
-          { value: 0.3, duration: 400 },
-          { value: 0.8, duration: 80 },
-          { value: 0, duration: 100 },
-          { value: 0, duration: 500 },
-    ],
-    delay: anime.stagger(500),
-    complete: function() {
-          anime({
-              targets: ['#ele1_0', '#ele1_1'],
-              opacity: 0,
-          })
-    }
+  targets: ['#ele1_0', '#ele1_1'],
+  opacity: [
+    { value: 0.5, duration: 600 },
+    { value: 0.7, duration: 200 },
+    { value: 0.3, duration: 400 },
+    { value: 0.8, duration: 80 },
+    { value: 0, duration: 100 },
+    { value: 0, duration: 500 },
+  ],
+  delay: anime.stagger(500),
+  complete: function() {
+    anime({
+      targets: ['#ele1_0', '#ele1_1'],
+      opacity: 0,
+    })
+  }
 };
 minianimePath1_0
 .add(runningAnim)
@@ -80,11 +80,11 @@ $(".pathcolor").hover(function(){
 });
 $(".pathcolor").click(function(){
   if ($(this).data("clicked")){
-      $(this).css("stroke", "white");
-      $(this).data("clicked", false);
+    $(this).css("stroke", "white");
+    $(this).data("clicked", false);
   }
   else {
-      $(this).data("clicked", true);
+    $(this).data("clicked", true);
   }
 });
 
@@ -232,3 +232,118 @@ let massPopChart = new Chart(myChart, {
   },
   backgroundColor: 'rgba(122,141,181, 0.5)'
 });
+
+
+let animChart = document.getElementById('anim-signal').getContext('2d');
+            
+// Chart.defaults.global.defaultFontFamily = "Lato";
+// Chart.defaults.global.defaultFontSize = 15;
+// Chart.defaults.global.defaultFontColor = '#777';
+
+let animatedChart = new Chart(animChart, {
+  type: 'line',
+  data:{
+    labels: ['1', "2", '3', '4', "5", "6"],
+    datasets: [{
+      label: 'Volts',
+      data: [
+          017595,
+          181045,
+          353060,
+          356519,
+          185162,
+          018072,
+      ],
+      backgroundColor: [
+          'green',
+          'yellow',
+          'orange',
+          'purple',
+          'red',
+          'blue',
+      ],
+      borderWidth: 2,
+      borderColor: 'rgba(170, 115, 14, 0.8)',
+      hoverBorderWidth: 5,
+      hoverBorderColor: '#000',
+      radius: 0,
+      fill:false,
+    }, {
+      label: 'Volts Form',
+      data: [
+          353060,
+          181045,
+          017595,
+          018072,
+          185162,
+          356519,
+      ],
+      //backgroundColor: 'blue',
+      backgroundColor: [
+          'green',
+          'yellow',
+          'orange',
+          'purple',
+          'red',
+          'blue'
+      ],
+      borderWidth: 2,
+      borderColor: 'rgba(16, 193, 185, 0.7)',
+      hoverBorderWidth: 5,
+      hoverBorderColor: '#000',
+      radius: 0,
+      backgroundColor: 'rgba(7, 85, 81, 0.58)' 
+    }]
+  },
+  options:{
+    title:{
+        display: true,
+        text: "PAM3",
+        fontSize: 25
+    },
+    legend:{
+      display: false,
+      position:'right',
+      labels:{
+          fontColor:'black'
+      }
+    },
+    layout:{
+        padding: {
+            left: 50,
+            right: 50,
+            bottom:0,
+            top: 50
+        }
+    },
+    tooltips:{
+        enabled:true
+    },
+    backgroundColor: false
+  }
+});
+var c_type = false;
+var data1 = [200000, 180000, 80000, 80000, 180000, 200000];
+var data2 = [353060, 181045, 017595, 018072, 185162, 356519];
+var data3 = [117595, 281045, 353060, 356519, 81045, 217595];
+var data4 = [200000, 350000, 200000, 350000, 200000, 350000];
+
+function mutateFig() {
+  console.log("30000 milliseconds");
+  if (Boolean(c_type) == false) {
+    c_type = true;
+    animatedChart.options.title.text="Second Title Input";
+    animatedChart.data.datasets[0].data= data1;
+    animatedChart.data.datasets[1].data= data2;
+
+    animatedChart.update();
+  }
+  else {
+    animatedChart.options.title.text="Third Input";
+    animatedChart.data.datasets[0].data= data3;
+    animatedChart.data.datasets[1].data= data4;
+    animatedChart.update();
+    c_type = false;
+  }
+}
+window.setInterval(mutateFig, 3000);
