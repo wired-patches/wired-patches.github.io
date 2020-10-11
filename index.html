@@ -22,8 +22,8 @@
                 <p> An alternative method of speeding programs. I have no idea what anything is. Help.</p>
                 <br>
                 <div class="contact">
-                    <a href="https://github.com/wired-patches/wired-patches.github.io" class="fa fa-question-circle" id="question"><p class="text">QUERY</p></a>
-                    <a href="https://github.com/wired-patches/wired-patches.github.io" class="fa fa-envelope" id="email"><p class="text">EMAIL</p></a>
+                    <a href="#final-thoughts" class="fa fa-question-circle" id="question"><p class="text">QUERY</p></a>
+                    <a href="#contact" class="fa fa-envelope" id="email"><p class="text">EMAIL</p></a>
                     <a href="https://github.com/wired-patches/wired-patches.github.io" class="fa fa-github" id="github"><p class="text">GITHUB</p></a>
                     <!-- <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span> -->
                 </div>
@@ -210,10 +210,9 @@
                 <div id="ele1_0"></div>
                 <div id="ele1_1"></div>
                 <div class="contact-2">
-                  <span class="fa fa-github" id="github"><p class="text">GITHUB</p></span>
-                  <span class="fa fa-envelope" id="email"><p class="text">EMAIL</p></span>
-                  <span class="fa fa-question-circle" id="question"><p class="text">QUERY</p></span>
-                  <!-- <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span> -->
+                  <a href="https://github.com/wired-patches/wired-patches.github.io" class="fa fa-github" id="github"><p class="text">GITHUB</p></a>
+                  <a href="#contact" class="fa fa-envelope" id="email"><p class="text">EMAIL</p></a>
+                  <a href="#final-thoughts" class="fa fa-question-circle" id="question"><p class="text">QUERY</p></a>
               </div>
             </div>
         </article>
@@ -238,7 +237,6 @@
             <br>
 
             <div>
-                <!-- <canvas id="pam3-signal"></canvas> -->
                 <canvas id="pam3-signal" width="400" height="400"></canvas>
             </div>
             <br>
@@ -247,38 +245,53 @@
                 PAM2 is the simplest electrical configuration when is comes to layering signals.
                 PAM3 is an electrical configuration for analysing wire signals.
                 PAM4 is the most complex electrical configuration which has the most noise.
-
-
             </p>
-
         </article>
         <article id="final-thoughts">
+          <br><br>
+          <h3> QA </h3>
           <div id="qa">
-            <div class="q"></div>
-            <div class="a"></div>
+            <div class="q"><h4>Question 1</h4></div>
+            <div class="a"><p> Answer 1
+              <ul> Reason </ul>
+            </p></div>
+            <div class="q"><h4>Question 1</h4></div>
+            <div class="a"><p> Answer 1
+              <ul> Reason </ul>
+            </p></div>
+            <div class="q"><h4>Question 1</h4></div>
+            <div class="a"><p> Answer 1
+              <ul> Reason </ul>
+            </p></div>
           </div>
-          <div class="contact-form">
-            <form id="contact-form" method="post" action="contact-handler.php" autocomplete="on">
+          <div id="contact" class="contact-form">
+            <br><br>
+            <h3> Contact Us </h3>
+            <form id="contact-form" method="post" action="https://formspree.io/f/mzbkdnly" autocomplete="on">
               <input name="name" type="text" class="form-control" placeholder="Your Name" required>
               <br>
-              <input name="email" type="email" class="form-control" autocomplete="off" placeholder="Your Email" required>
+              <input name="_replyto" type="email" class="form-control" autocomplete="off" placeholder="Your Email" required>
               <br>
                 <textarea name="message" class="form-control" placeholder="Message" row="4" required></textarea>
                 <br>
-      
-                <input type="submit" class="form-control submit" value="SEND MESSAGE">
+                <input type="hidden" name="_next" value="https://wired-patches.github.io/">
+                <br>
+                <br>
+                <input id="submit-btn" type="submit" value="Send">
             </form>
           </div>
         </article>
+
         <footer>
-            <div class="contact">
-                <span class="fa fa-github" id="github"><p class="text">GITHUB</p></span>
-                <span class="fa fa-envelope" id="email"><p class="text">EMAIL</p></span>
-                <span class="fa fa-question-circle" id="question"><p class="text">QUERY</p></span>
+            <div class="contact-3">
+                <a href="https://github.com/wired-patches/wired-patches.github.io" class="fa fa-github" id="github"><p class="text">GITHUB</p></a>
+                <a href="#contact" class="fa fa-envelope" id="email"><p class="text">EMAIL</p></a>
+                <a href="#final-thoughts" class="fa fa-question-circle" id="question"><p class="text">QUERY</p></a>
             </div>
-            <p id="license">© rb all rights reserved</p>
+            <div>
+              <p id="license">© rb all rights reserved</p>
+            </div>
         </footer>
-        <script src=""></script>
         <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="spice.js"></script>
