@@ -198,6 +198,10 @@ form {
     font-size: 18px;
 }
 
+.g-recaptcha {
+    display: inline-block;
+
+}
 
 #submit-btn {
     border: 1px solid rgb(87, 112, 119);
