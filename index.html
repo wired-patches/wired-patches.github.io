@@ -9,7 +9,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity=“sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU” crossorigin=“anonymous”>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
   <nav id=navbar>
     <ul><a href="#home" class=nav-link>Home</a></ul>
@@ -241,6 +243,11 @@
       <p> Data categorization is made difficult the more levels PAM has. PAM2 has only one level, PAM3 has two levels, and PAM4 has three levels.</p>
       <p> PAM2 decision threshold is determined by two wires. By graphing both instances, the threshold instance would be found by calculating the midpoint between. </p>
       <p> PAM3 is made even more complex, and it has two decision thresholds which are regarded as signal levels</p>
+      <br><br><br>
+      <div>
+        <canvas id="pam3Alternative" width="400" height="400"></canvas>
+      </div>
+      
       <div>
         <canvas id="anim-signal" width="400" height="400"></canvas>
       </div>
@@ -295,6 +302,8 @@
         <a href="https://github.com/wired-patches/wired-patches.github.io" class="fa fa-github" id="github"><p class="text">GITHUB</p></a>
         <a href="#contact" class="fa fa-envelope" id="email"><p class="text">EMAIL</p></a>
         <a href="#final-thoughts" class="fa fa-question-circle" id="question"><p class="text">QUERY</p></a>
+        <a href="#" class="fa fa-heart" id="heart"><p class="text">LOVE</p></a>
+        <a href="st.html" class="fas fa-donate" id="donate"><p class="text">DONATE</p></a>
       </div>
       <div>
         <p id="license">© rb all rights reserved</p>

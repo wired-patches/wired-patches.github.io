@@ -103,15 +103,11 @@ var mid_line = [4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000
 var bottom_line = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var first_data = [7500, 8000, 7500, 6000, 4500, 4000, 4500, 6000, 7500, 8000, 7500];
 var first_data_ = [4500, 4000, 4500, 6000, 7500, 8000, 7500, 6000, 4500, 4000, 4500];
-// var first_data_ = [8000, 4500, 4000, 4500, 7500, 8000, 7500, 4500, 4000, 4500, 8000];
 var first_data_0 = [];
-// var first_data_0 = [8000, 500, 0, 500, 7500, 8000, 7500, 500, 0, 500, 8000];
 var third_data = [500, 2000, 3500, 4000, 3500, 2000, 500, 0, 500, 2000, 3500];
 var third_data_0 = [];
 var third_data_ = [3500, 2000, 500, 0, 500, 2000, 3500, 4000, 3500, 2000, 500];
-// var third_data_ = [4000, 500, 0, 500, 3500, 4000, 3500, 500, 0, 500, 3500];
-// var third_data_ = [4000, 500, 0, 500, 3500, 4000, 3500, 500, 0, 500, 3500];
-// var third_data_0 = [0, 7500, 8000, 7500, 500, 0, 500, 7500, 8000, 7500, 0];
+
 var second_data = [1200, 2000, 1800, 2000, 1800, 1200, 2000];
 
 
@@ -313,7 +309,7 @@ let animatedChart = new Chart(animChart, {
             left: 50,
             right: 50,
             bottom:0,
-            top: 50
+            top: 50,
         }
     },
     tooltips:{
@@ -347,3 +343,124 @@ function mutateFig() {
   }
 }
 window.setInterval(mutateFig, 3000);
+
+let pam3Alt = document.getElementById('pam3Alternative').getContext('2d');
+
+// pam3-alternative chart
+var pam3_original_1 = []
+var pam3_original_2 = []
+var pam3_alternative_1 = []
+var pam3_alternative_2 = []
+
+let pam3_vs = new Chart(pam3Alt, {
+  type: 'line',
+  // backgroundColor: "yellow",
+  data:{
+    labels: ['1', "2", '3', '4', "5", "6", "7", "8", "9", "10", "11"],
+    datasets: [{
+        label: 'Volts',
+        data: top_line,
+        borderWidth: 2,
+        borderColor: color_choice[0],
+        hoverBorderWidth: 5,
+        hoverBorderColor: 'white',
+        fill:false,
+        radius: 0,
+      },{
+        data: bottom_line,
+        borderWidth: 2,
+        borderColor: color_choice[0],
+        hoverBorderWidth: 5,
+        hoverBorderColor: '#000',
+        fill:false,
+        radius: 0,
+      },{
+        data: mid_line,
+        borderWidth: 2,
+        borderColor: color_choice[0],
+        hoverBorderWidth: 5,
+        hoverBorderColor: '#000',
+        fill:false,
+        radius: 0,
+      },
+      {
+        data: first_data,
+        borderWidth: 2,
+        borderColor: color_choice[1],
+        hoverBorderWidth: 5,
+        hoverBorderColor: '#000',
+        fill:false,
+        radius: 0,
+      },
+      {
+        data: first_data_,
+        borderWidth: 2,
+        borderColor: color_choice[3],
+        hoverBorderWidth: 5,
+        hoverBorderColor: '#000',
+        fill:false,
+        // radius: 0,
+      },
+
+      {
+        data: [third_data, first_data],     // how to combine lists [x] + [*], to shift datapoints
+        borderWidth: 2,
+        borderColor: color_choice[1],
+        hoverBorderWidth: 5,
+        hoverBorderColor: '#000',
+        fill:false,
+        radius: 0,
+      },
+      {
+        data: third_data,
+        borderWidth: 2,
+        borderColor: color_choice[1],
+        hoverBorderWidth: 5,
+        hoverBorderColor: '#000',
+        fill:false,
+        // radius: 0,
+      },
+      {
+        data: third_data_,
+        borderWidth: 2,
+        borderColor: color_choice[3],
+        hoverBorderWidth: 5,
+        hoverBorderColor: '#000',
+        fill:false,
+        // radius: 0,
+      }]
+    },
+  options:{
+    title:{
+      display: true,
+      text: "PAM3-VS",
+      fontSize: 30,
+      fontStyle: 'bold',
+      padding: 25
+    },
+    legend:{
+      display: false,
+      position:'bottom',
+      labels:{
+        fontColor:'black'
+      }
+    },
+    layout:{
+      padding: {
+        left: 50,
+        right: 100,
+        bottom:50,
+        top: 50
+      },
+      margin: {
+        left: 20,
+        right:20,
+      }
+    },
+    tooltips:{
+      enabled:true
+    },
+    backgroundColor: 'rgba(122,141,181, 0.5)'
+  },
+  backgroundColor: 'rgba(122,141,181, 0.5)'
+});

@@ -23,10 +23,10 @@ article {
 
 #intro {
     /* border: 2px solid pink; */
-    justify-content: center;
+    /* justify-content: center;
     justify-items: center;
     align-content: center;
-    align-items: center;
+    align-items: center; */
 }
 #intro h3 {
     font-size: 50px;
@@ -162,7 +162,7 @@ nav {
 .nav-link:hover{
     filter: grayscale(0%)
 }
-.fa:hover {
+.fa:hover, .fas:hover, .far:hover {
     cursor: pointer;
 }
 #content {
@@ -293,9 +293,6 @@ a:hover {
     position: relative;
     margin: auto;
 }
-a:hover {
-    cursor: pointer;
-}
 
 footer {
 
@@ -307,7 +304,7 @@ footer {
     vertical-align: middle;
 }
 
-#github, #email, #question {
+#github, #email, #question, #heart, #donate{
     font-size: 30px;
     text-justify: center;
     text-align: center;
@@ -316,9 +313,10 @@ footer {
     justify-content: center;
     justify-items: center;
     color: rgb(148, 204, 219);
+    border:2px solid red;
 
 }
-#github .text, #email .text, #question .text {
+#github .text, #email .text, #question .text, #heart .text, #donate .text{
     opacity: 0;
     font-size: 12px;
     padding-top: 8px;
@@ -326,7 +324,7 @@ footer {
     text-justify:center;
     display: table-cell;
 }
-#github:hover .text, #email:hover .text, #question:hover .text {
+#github:hover .text, #email:hover .text, #question:hover .text, #donate:hover .text, #heart:hover .text {
     opacity: 1;
 }
 
@@ -339,8 +337,10 @@ footer {
     #intro {
         display: flex;
         padding-right: 4%;
-        padding-left: 8%;
+        padding-left: 4%;
         transition: all 1s;
+        margin-right: 4%;
+        margin-left: 0%;
     }
     #intro h3{
         margin-bottom: 10px;
