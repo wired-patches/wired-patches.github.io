@@ -14,7 +14,7 @@ html {
     /* font-family: 'Assistant'; */
     font-family: 'Arvo';
     scrollbar-width: thin;
-    scrollbar-color: rgb(87, 112, 119) rgba(0, 0, 0, 0);
+    scrollbar-color: rgb(87, 112, 119) rgba(48, 15, 15, 0);
 }
 article {
     margin-top: 5%;
@@ -209,9 +209,10 @@ form {
 }
 
 #submit-btn {
-    background-color: rgb(87, 112, 119);
+    background-color: transparent;
+    /* background-color: rgb(87, 112, 119); */
     vertical-align: middle;
-    color: white;
+    color: rgb(111, 160, 173);
     font-weight: bolder;
     width: 100px;
     height:80px;
@@ -223,7 +224,7 @@ form {
     transition: 1s;
 }
 #submit-btn:hover {
-    background-color: rgb(111, 160, 173);
+    background-color: #2b3242;
 }
 textarea {
     resize: none;
