@@ -1,0 +1,80 @@
+html {
+    padding: 5%;
+}
+h3 {
+    color:rgb(87, 112, 119);;
+    font-weight: bolder;
+    font-size: 25px;
+}
+.card {
+    /* border:rgb(135, 158, 165) 1px solid; */
+    width: 200px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+}
+#options {
+    /* display: inline-block; */
+    vertical-align: middle;
+    justify-items: center;
+    /* border:rgb(168, 67, 182) 1px solid; */
+    text-align: center;
+}
+#dona-form {
+    /* border:rgb(87, 112, 119) 1px solid; */
+    text-align: center;
+    margin-top: 20px;
+}
+button, #submit-btn {
+    width: 100px;
+    padding: 6px;
+    border: 3px solid white;
+    border-radius: 15px 15px 15px 15px;
+    background:rgb(87, 112, 119);
+    font-weight: solid;
+    font-size: 20px;
+    color: white;
+    margin: 3px 3px 3px 3px;
+}
+.card button {
+    width: 200px;
+    padding: 6px;
+    vertical-align: middle;
+    border: 3px solid white;
+    border-radius: 15px 15px 15px 15px;
+    background:rgb(87, 112, 119);
+    font-weight: solid;
+    font-size: 15px;
+    color: white;
+    margin: 3px 3px 3px 3px;
+}
+button:hover, #submit-btn:hover {
+    background:rgb(134, 169, 179);
+    cursor: pointer;
+}
+*, *:focus, *:hover {
+    outline: none;
+}
+.form-control {
+    border: none;
+    padding: 6px;
+    width: 400px;
+    border-bottom: 1px solid rgb(87, 112, 119);
+    margin-top: 10px;
+    font-size: 18px;
+}
+textarea {
+    resize: none;
+    height: 200px;
+}
+textarea::-webkit-scrollbar-thumb {
+    background-color: rgb(87, 112, 119);
+    width: 8px;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(219, 247, 255);
+    cursor: pointer;
+}
+textarea::-webkit-scrollbar{
+    width: 8px;
+}

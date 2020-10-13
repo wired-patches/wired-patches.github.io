@@ -1,3 +1,37 @@
-<article>
-    <p></p>
-</article>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://js.stripe.com/v3/"></script>
+        <link rel="stylesheet" href="salt.css">
+    </head>
+
+    <body>
+        <button id="return" onclick="location.href='index.html'"> return </button>
+        <div id="options">
+            <div class="card">
+                <h3> One Time Donation </h3>
+                <button> Donate $1.00 </button>
+                <button> Donate $5.00 </button>
+                <button> Donate $10.00 </button>
+                <button> Donate Other </button>
+            </div>
+            <div class="card">
+                <h3> Recurring Donation </h3>
+                <button> Donate $5.00 per month </button>
+                <button> Donate Other per month </button>
+            </div>
+        </div>
+        <form id="dona-form" method="post" action="" autocomplete="on">
+            <input name="name" type="text" class="form-control" placeholder="Your Name" required>
+            <br>
+            <input name="_replyto" type="email" class="form-control" autocomplete="off" placeholder="Your Email" required>
+            <br>
+            <textarea name="message" class="form-control" placeholder="Message" row="4" required></textarea>
+            <br>
+            <input type="hidden" name="_next" value="https://wired-patches.github.io/">
+            <br><br>
+            <input id="submit-btn" type="submit" value="Send">
+        </form>
+    </body>
+</html>

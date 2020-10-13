@@ -313,7 +313,6 @@ footer {
     justify-content: center;
     justify-items: center;
     color: rgb(148, 204, 219);
-    border:2px solid red;
 
 }
 #github .text, #email .text, #question .text, #heart .text, #donate .text{
