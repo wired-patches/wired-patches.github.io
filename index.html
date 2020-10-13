@@ -238,19 +238,20 @@
       <p> Unfortunately, I have no idea how this works, so this paragraph will be a placeholder for explaining why.</p>
       <p> Unfortunately, I have no idea how this works, so this paragraph will be a placeholder for explaining why.</p>
       <br><br><br>
-      <div>
+      <div class="graph">
         <canvas id="pam3-signal" width="400" height="400"></canvas>
       </div>
+      <br><br><br>
       <p> Animated references </p>
       <p> Data categorization is made difficult the more levels PAM has. PAM2 has only one level, PAM3 has two levels, and PAM4 has three levels.</p>
       <p> PAM2 decision threshold is determined by two wires. By graphing both instances, the threshold instance would be found by calculating the midpoint between. </p>
       <p> PAM3 is made even more complex, and it has two decision thresholds which are regarded as signal levels</p>
       <br><br><br>
-      <div>
+      <div class="graph">
         <canvas id="pam3Alternative" width="400" height="400"></canvas>
       </div>
       
-      <div>
+      <div class="graph">
         <canvas id="anim-signal" width="400" height="400"></canvas>
       </div>
       <br><br>
@@ -264,17 +265,18 @@
       <br><br>
       <h3> QA </h3>
       <div id="qa">
-        <div class="q"><h4>Question 1</h4></div>
-        <div class="a"><p> Answer 1
-          <ul> Reason </ul>
+        <div class="q"><h4> 1: How to does shifting signals provide a better transmission?</h4></div>
+        <div class="a"><p>  
+          <ul> The minimization of overlap between levels would clarify signals by adding a consistant baseline of noise which would allow clearer transmission of data within bus. </ul>
         </p></div>
-        <div class="q"><h4>Question 1</h4></div>
-        <div class="a"><p> Answer 1
-          <ul> Reason </ul>
+        <div class="q"><h4>2: What are the tradeoffs between standard PAM3 and alternative PAM3 configurations?</h4></div>
+        <div class="a"><p> 
+          <ul> As mentioned in Q1, the alternative configuration allows a greater noise threshold while preserving the data transmitted by creating a noise baseline </ul>
+          <ul> Due to it's configuration, the alternative loses two data points whereas the standard is complete. </ul>
         </p></div>
-        <div class="q"><h4>Question 1</h4></div>
-        <div class="a"><p> Answer 1
-          <ul> Reason </ul>
+        <div class="q"><h4>3: What are the monetary costs of this configuration</h4></div>
+        <div class="a"><p> Costs of a complete project including wages, software, and other parameters are not considered here. However, by making the hardware efficient with this configuration, it is given to lower the costs of the total project.
+          <ul> The cost for production including licensing, taxes, selling price has yet to be determined. </ul>
         </p></div>
       </div>
       <div id="contact" class="contact-form">

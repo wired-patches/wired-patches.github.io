@@ -15,7 +15,6 @@ function apply_sticky() {
 };
 
 // mini e animated diagram
-
 var miniwirepath1_0 = anime.path('#miniringpath3');
 var minianimePath1_0 = anime.timeline({
   loop: true,
@@ -35,7 +34,6 @@ const runningAnim = {
     },
   ],
 };
-
 const fadingAnim ={
   targets: ['#ele1_0', '#ele1_1'],
   opacity: [
@@ -60,7 +58,6 @@ minianimePath1_0
 minianimePath1_0.play();
 
 // Wire Color
-
 $(".pathcolor").hover(function(){
   $(this).data("hover", true)
   if ($(this).data("clicked")) {
@@ -88,16 +85,13 @@ $(".pathcolor").click(function(){
   }
 });
 
-
 // pam3 chart
-
 let myChart = document.getElementById('pam3-signal').getContext('2d');
 color_choice = ['rgba(122,141,181, 0.5)', 'rgba(128,180,158, 0.5)', 'rgba(182,124,124, 0.5)', 'rgba(124, 169, 182, 1)'];
 Chart.defaults.global.defaultFontFamily = "Lato";
 Chart.defaults.global.defaultFontSize = 15;
 Chart.defaults.global.defaultFontColor = '#777';
 Chart.defaults.global.backgroundColor = "rgba(122,141,181, 0.5)";
-
 var top_line = [8000, 8000, 8000, 8000, 8000, 8000, 8000, 8000, 8000, 8000, 8000];
 var mid_line = [4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000];
 var bottom_line = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -107,9 +101,7 @@ var first_data_0 = [];
 var third_data = [500, 2000, 3500, 4000, 3500, 2000, 500, 0, 500, 2000, 3500];
 var third_data_0 = [];
 var third_data_ = [3500, 2000, 500, 0, 500, 2000, 3500, 4000, 3500, 2000, 500];
-
 var second_data = [1200, 2000, 1800, 2000, 1800, 1200, 2000];
-
 
 let massPopChart = new Chart(myChart, {
   type: 'line',
@@ -229,13 +221,10 @@ let massPopChart = new Chart(myChart, {
   backgroundColor: 'rgba(122,141,181, 0.5)'
 });
 
-
 let animChart = document.getElementById('anim-signal').getContext('2d');
-            
 // Chart.defaults.global.defaultFontFamily = "Lato";
 // Chart.defaults.global.defaultFontSize = 15;
 // Chart.defaults.global.defaultFontColor = '#777';
-
 let animatedChart = new Chart(animChart, {
   type: 'line',
   data:{
@@ -344,17 +333,12 @@ function mutateFig() {
 }
 window.setInterval(mutateFig, 3000);
 
-let pam3Alt = document.getElementById('pam3Alternative').getContext('2d');
-
 // pam3-alternative chart
-var pam3_original_1 = []
-var pam3_original_2 = []
-var pam3_alternative_1 = []
-var pam3_alternative_2 = []
-
+let pam3Alt = document.getElementById('pam3Alternative').getContext('2d');
+var pam3_original_1 = [4500,6000, ...first_data]
+var pam3_original_2 = [7500,6000, ...first_data_]
 let pam3_vs = new Chart(pam3Alt, {
   type: 'line',
-  // backgroundColor: "yellow",
   data:{
     labels: ['1', "2", '3', '4', "5", "6", "7", "8", "9", "10", "11"],
     datasets: [{
@@ -386,7 +370,7 @@ let pam3_vs = new Chart(pam3Alt, {
       {
         data: first_data,
         borderWidth: 2,
-        borderColor: color_choice[1],
+        borderColor: color_choice[3],
         hoverBorderWidth: 5,
         hoverBorderColor: '#000',
         fill:false,
@@ -399,16 +383,6 @@ let pam3_vs = new Chart(pam3Alt, {
         hoverBorderWidth: 5,
         hoverBorderColor: '#000',
         fill:false,
-        // radius: 0,
-      },
-
-      {
-        data: [third_data, first_data],     // how to combine lists [x] + [*], to shift datapoints
-        borderWidth: 2,
-        borderColor: color_choice[1],
-        hoverBorderWidth: 5,
-        hoverBorderColor: '#000',
-        fill:false,
         radius: 0,
       },
       {
@@ -418,7 +392,7 @@ let pam3_vs = new Chart(pam3Alt, {
         hoverBorderWidth: 5,
         hoverBorderColor: '#000',
         fill:false,
-        // radius: 0,
+        radius: 0,
       },
       {
         data: third_data_,
@@ -427,7 +401,7 @@ let pam3_vs = new Chart(pam3Alt, {
         hoverBorderWidth: 5,
         hoverBorderColor: '#000',
         fill:false,
-        // radius: 0,
+        radius: 0,
       }]
     },
   options:{
@@ -464,3 +438,59 @@ let pam3_vs = new Chart(pam3Alt, {
   },
   backgroundColor: 'rgba(122,141,181, 0.5)'
 });
+pam3_alt = false;
+function mutatePAM3() {
+  console.log("30000 milliseconds");
+  if (Boolean(pam3_alt) == false) {
+    pam3_alt = true;
+    pam3_vs.options.title.text="PAM3";
+    pam3_vs.data.datasets[3].data= pam3_original_1;
+    pam3_vs.data.datasets[4].data= pam3_original_2;
+    pam3_vs.update();
+  }
+  else {
+    pam3_vs.options.title.text="PAM3 Alternative";
+    pam3_vs.data.datasets[3].data= first_data;
+    pam3_vs.data.datasets[4].data= first_data_;
+    pam3_vs.update();
+    pam3_alt = false;
+  }
+}
+window.setInterval(mutatePAM3, 3000);
+
+// Withing Stripe
+
+// var stripe = Stripe()
+
+
+// // STRIPE
+
+// const stripe = require('stripe')('	pk_test_51HbbcRCFtyo6pYI00Oj6G1ewHrsYcslzTF7Tsa2cWD1MWg7BF5RtsaecKOdjPJ7wCr6blpT4Eu1t5nH7mrxhO0x600Qam897SQ');
+// const DOM = 'https://wired-patches.github.io/st.html';
+// const express = require('express');
+// const app = express()
+// app.use(express.static('.'));
+
+// app.post('/create-session', async(req, res) => {
+//   const session = await stripe.checkout.sessions.create({
+//     payment_method_types: ['card'],
+//     line_items: [
+//       {
+//         price_data: {
+//           currency: 'usd',
+//           product_data: {
+//             name: 'Attachments',
+//           },
+//           unit_amount: 1,
+//         },
+//         qualtity: 1,
+//       },
+//     ],
+//     mode: 'payment',
+//     success_url: '${DOM}/success.html',
+//     cancel_url: '${DOM}/cancel.html',
+//   });
+//   res.json({ id: session.id });
+// });
+
+// app.listen(4242, () => console.log('Running on port 4242'));

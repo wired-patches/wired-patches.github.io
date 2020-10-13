@@ -11,14 +11,14 @@
         <div id="options">
             <div class="card">
                 <h3> One Time Donation </h3>
-                <button> Donate $1.00 </button>
-                <button> Donate $5.00 </button>
-                <button> Donate $10.00 </button>
+                <button data-checkout-mode="payment" data-price-id="price_1HbbkLCFtyo6pYI01bHKMF2H"> Donate $1.00 </button>
+                <button data-checkout-mode="payment" data-price-id="price_1HbbkLCFtyo6pYI0dmyzPOPO"> Donate $5.00 </button>
+                <button data-checkout-mode="payment" data-price-id="price_1HbbkLCFtyo6pYI0XaYb855d"> Donate $10.00 </button>
                 <button> Donate Other </button>
             </div>
             <div class="card">
                 <h3> Recurring Donation </h3>
-                <button> Donate $5.00 per month </button>
+                <button data-checkout-mode="subscription" data-price-id="price_1HbbkLCFtyo6pYI0bhmGg1rY"> Donate $5.00 per month </button>
                 <button> Donate Other per month </button>
             </div>
         </div>
@@ -33,5 +33,38 @@
             <br><br>
             <input id="submit-btn" type="submit" value="Send">
         </form>
+        <script>
+            var PUB_KEY = 'pk_test_51HbbcRCFtyo6pYI00Oj6G1ewHrsYcslzTF7Tsa2cWD1MWg7BF5RtsaecKOdjPJ7wCr6blpT4Eu1t5nH7mrxhO0x600Qam897SQ';
+            var DOMAIN = location.href.replace(/[^/]*$/, '');
+
+            if (PUB_KEY === 'pk_test_51HbbcRCFtyo6pYI00Oj6G1ewHrsYcslzTF7Tsa2cWD1MWg7BF5RtsaecKOdjPJ7wCr6blpT4Eu1t5nH7mrxhO0x600Qam897SQ') {
+                console.log(
+
+                )
+            }
+            var stripe = Stripe(PUB_KEY);
+            var handler = function (result) {
+                if (result.error) {
+                    var displayError = document.getElementById('error-message');
+                    displayError.textContent = result.error.message;
+                }
+            };
+            document.querySelectorAll('card button').forEach(function(button) {
+                button.addEventListener('click', function (e) {
+                    var mode = e.target.dataset.checkoutMode;
+                    var priceId = e.target.dataset.priceId;
+                    var items = [{ price: priceId, quantity: 1 }];
+
+                    stripe
+                        .redirectToCheckout({
+                            mode: mode,
+                            lineItems: items,
+                            successUrl: DOMAIN+ 'success.html?session_id={CHECKOUT_SESSION_ID}',
+                            cancelUrl: DOMAIN+ 'success.html?session_id={CHECKOUT_SESSION_ID}',
+                        })
+                        .then(handler);
+                });
+            });
+        </script>
     </body>
 </html>

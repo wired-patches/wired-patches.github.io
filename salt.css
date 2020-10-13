@@ -7,21 +7,17 @@ h3 {
     font-size: 25px;
 }
 .card {
-    /* border:rgb(135, 158, 165) 1px solid; */
     width: 200px;
     display: inline-block;
     vertical-align: top;
     padding: 10px;
 }
 #options {
-    /* display: inline-block; */
     vertical-align: middle;
     justify-items: center;
-    /* border:rgb(168, 67, 182) 1px solid; */
     text-align: center;
 }
 #dona-form {
-    /* border:rgb(87, 112, 119) 1px solid; */
     text-align: center;
     margin-top: 20px;
 }
