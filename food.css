@@ -1,6 +1,17 @@
-body::-webkit-scrollbar {width: 0.25rem;}
-body::-webkit-scrollbar-thumb {background: rgb(87, 112, 119);}
-body::-webkit-scrollbar-thumb:hover {background: rgb(207, 242, 252);}
+:root {
+    --bg-color: #181c25;
+    --font-color:rgb(148, 204, 219);
+    --sub-font-color:rgb(219, 79, 54);
+    --transition-color: rgb(87, 112, 119);
+    --font-arvo: 'Arvo';
+    --font-assistant: 'Assistant';
+    --font-volk: 'Volkorn';
+    --font-playfair: 'Playfair Display';
+}
+
+::-webkit-scrollbar {width: 0.25rem;}
+::-webkit-scrollbar-thumb {background: var(--transition-color);}
+::-webkit-scrollbar-thumb:hover {background: var(--font-color);}
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -10,49 +21,46 @@ input:-webkit-autofill:active  {
     -webkit-box-shadow: 0 0 0 30px none inset !important;
     -webkit-text-fill-color: #fff !important;
 }
-input:-webkit-autofill:hover {
-    background-color: aqua;
-    transition: background-color 3s;
-}
-
 input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
 }
-
 html {
-    background-color: #181c25;
+    background-color: var(--bg-color);
     overflow-x: hidden;
     /* font-family: 'Assistant'; */
-    font-family: 'Arvo';
+    font-family: var(--font-assistant);
     scrollbar-width: thin;
-    scrollbar-color: rgb(87, 112, 119) rgba(48, 15, 15, 0);
+    scrollbar-color: var(--transition-color) var(--bg-color);
 }
 article {
     margin-top: 5%;
     margin-bottom: 10%;
 }
-
 #intro h3 {
     font-size: 50px;
     padding: 0;
+    font-family: var(--font-assistant);
 }
 #intro p {
-    color: rgb(219, 79, 54);
+    color: var(--sub-font-color);
     font-weight: bold;
 }
 #intro .text {
-    color: rgb(141, 224, 247);
+    color: var(--font-color);
     font-weight: bold;
 }
-#intro .fa {
-    color:  rgb(94, 220, 255);
+.fa, .fas {
+    color:  var(--font-color);
     filter: grayscale(1);
+    opacity: 0.3;
+    /* text-align: center; */
 }
-#intro .fa:hover {
-    filter: grayscale(0)
-
+.fa:hover, .fas:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transition: 1s;
 }
 #final-thoughts h3 {
     text-align: center;
@@ -100,25 +108,27 @@ article {
     box-shadow: 0px 0px 3px rgba(255, 223, 107, 1),
                 0px 0px 5px rgba(255, 223, 107, 1);
     opacity: 0;
-    width: 20px;
+    width: 10px;
     height: 2px;
-    top: 32px;
-    left: 24px;
+    top: 33px;
+    left: 29px;
 }
 h3, h4, p, ul, li{
-    color: rgb(148, 204, 219);
+    color: var(--font-color);
     margin-left: 15%;
     margin-right: 15%;
     text-decoration: none;
-    font-family: 'Alvo';
 }
 a {
-    color: rgb(148, 204, 219);
+    color: var(--font-color);
     text-decoration: none;
 }
+.q h4, .q {
+    font-weight: bold;
+    color: var(--sub-font-color);
+}
 canvas {
-    background-color:  #202736;
-
+    background-color:  var(--bg-color);
     position: relative;
 }
 nav {
@@ -157,10 +167,9 @@ nav {
 .nav-link:hover{
     filter: grayscale(0%)
 }
-.fa:hover, .fas:hover, .far:hover {
+.fa:hover, .fas:hover, .far:hover, a:hover {
     cursor: pointer;
 }
-
 #pam3-signal {
     height: 100px;
     width: 100px;
@@ -200,12 +209,12 @@ form {
 #submit-btn {
     background-color: transparent;
     vertical-align: middle;
-    color: rgb(111, 160, 173);
+    color: var(--font-color);
     font-weight: bolder;
     width: 100px;
     height:80px;
     border-radius: 5%;
-    border:1px solid rgb(111, 160, 173);
+    border:1px solid var(--font-color);
     display: inline-block;
     font-size: 20px;
     margin-left: 20px;
@@ -218,22 +227,9 @@ textarea {
     resize: none;
     height: 200px;
 }
-textarea::-webkit-scrollbar-thumb {
-    background-color: rgb(87, 112, 119);
-    width: 8px;
-}
-textarea::-webkit-scrollbar-thumb:hover {
-    background-color: rgb(219, 247, 255);
-    cursor: pointer;
-}
-textarea::-webkit-scrollbar{
-    background-color: #181c25;
-    width: 8px;
-}
 input{
     height: 45px;
 }
-
 #final-thoughts {
     margin-bottom: 50px;
 }
@@ -268,9 +264,6 @@ input{
     height: 50px;
     float: center;
 }
-a:hover {
-    cursor: pointer;
-}
 .contact-3 {
     position: relative;
     margin: auto;
@@ -298,7 +291,7 @@ canvas {
     align-content: center;
     justify-content: center;
     justify-items: center;
-    color: rgb(148, 204, 219);
+    color: var(--font-color);
 
 }
 #github .text, #email .text, #question .text, #heart .text, #donate .text{
