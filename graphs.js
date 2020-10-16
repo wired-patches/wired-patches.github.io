@@ -1,24 +1,36 @@
-var miniwirepath1_0 = anime.path('#miniringpath3');
-var minianimePath1_0 = anime.timeline({
+var miniwirepath0 = anime.path('#miniringpath1');
+var minianimePath0 = anime({
+  loop: true,
+  autoplay: true,
+  targets: ['#ele0_0', '#ele0_1','#ele0_2', '#ele0_3'],
+  translateX: miniwirepath0('x'),
+  translateY: miniwirepath0('y'),
+  rotate: miniwirepath0('angle'),
+  duration: 30000,
+  delay: anime.stagger(500),
+});
+
+var miniwirepath1 = anime.path('#miniringpath3');
+var minianimePath1 = anime.timeline({
   loop: true,
   easing: 'linear',
-  autoplay: false,
+  autoplay: true,
 });
-const runningAnim = {
-  targets: ['#ele1_0', '#ele1_1'],
+const runningAnim1 = {
+  targets: ['#ele1_0', '#ele1_1','#ele1_2', '#ele1_3'],
   keyframes: [
     { opacity: 1, duration: 0.001 },
     {
-      translateX: miniwirepath1_0('x'),
-      translateY: miniwirepath1_0('y'),
-      rotate: miniwirepath1_0('angle'),
-      duration: 20000,
+      translateX: miniwirepath1('x'),
+      translateY: miniwirepath1('y'),
+      rotate: miniwirepath1('angle'),
+      duration: 10000,
       delay: anime.stagger(500),
     },
   ],
 };
-const fadingAnim ={
-  targets: ['#ele1_0', '#ele1_1'],
+const fadingAnim1 ={
+  targets: ['#ele1_0', '#ele1_1','#ele1_2', '#ele1_3'],
   opacity: [
     { value: 0.5, duration: 600 },
     { value: 0.7, duration: 200 },
@@ -30,15 +42,15 @@ const fadingAnim ={
   delay: anime.stagger(500),
   complete: function() {
     anime({
-      targets: ['#ele1_0', '#ele1_1'],
+      targets: ['#ele1_0', '#ele1_1','#ele1_2', '#ele1_3'],
       opacity: 0,
     })
   }
 };
-minianimePath1_0
-.add(runningAnim)
-.add(fadingAnim, '-=3000');
-minianimePath1_0.play();
+minianimePath1
+.add(runningAnim1)
+// .add(fadingAnim1, '-=3000');
+// minianimePath1.play();
 
 // Wire Color
 $(".pathcolor").hover(function(){

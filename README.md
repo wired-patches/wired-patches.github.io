@@ -1,4 +1,6 @@
 ### Ring Bus Configuration Outline at [site]
+Tools Used: Google Analytics, Google Recaptcha, Stripe
+JS Graphs: anime.js, chart.js
 
 ## I'm currently working on several projects 
 - if you have a recommendation for code or design please contact me. Much appreciated.

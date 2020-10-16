@@ -99,7 +99,22 @@ article {
     margin: auto;
     text-align: center;
 }
-#ele1_0, #ele1_1
+
+#ele0_0, #ele0_1, #ele0_2, #ele0_3
+{
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    background: rgba(255, 223, 107, 1);
+    box-shadow: 0px 0px 3px rgba(255, 223, 107, 1),
+                0px 0px 5px rgba(255, 223, 107, 1);
+    width: 10px;
+    height: 2px;
+    top: 19px;
+    left: 16px;
+}
+
+#ele1_0, #ele1_1, #ele1_2, #ele1_3
 {
     border-radius: 50%;
     border: none;
